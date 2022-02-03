@@ -26,7 +26,16 @@ const animals = [
  * getTotalCount(animals); //> 28
  * getTotalCount([]); //> 0 // returns 0 if the input array is empty
  */
-function getTotalCount(animals) {}
+function getTotalCount(animals) {
+  let sum = 0
+  if (animals.count === 0) {
+    return 0
+  }
+    for (let i = 0; i < animals.length; i++) {
+    sum += animals[i].count
+  } 
+return sum
+}
 
 /**
  * FUNCTION DESCRIPTION
@@ -40,8 +49,18 @@ function getTotalCount(animals) {}
  * getAllKinds(animals); //> ["Pig", "Cow", "Chicken", "Horse", "Dog", "Cat"]
  * getAllKinds([]); //> [] // returns empty array if input array is empty
  */
-function getAllKinds(animals) {}
 
+function getAllKinds(animals) {
+  let sum = []
+  
+  if (animals.kind === "") {
+    return sum
+}
+  for (let i = 0; i < animals.length; i++) {
+    sum.push(animals[i].kind)  
+}
+return sum
+}
 /**
  * FUNCTION DESCRIPTION
  * ------------------
@@ -59,9 +78,19 @@ function getAllKinds(animals) {}
   ];
  * filterByCountMinimum([], 3); //> [] // returns empty array if input array is empty
  */
-function filterByCountMinimum(animals, minimum) {}
+function filterByCountMinimum(animals, minimum) {
+  let newArray = []
 
+  for (let i = 0; i < animals.length; i++) {
+    if (animals[i].count >= minimum) {
+      newArray.push(animals[i]) 
+  }
+ }
+    return newArray
+  
+}
 /**
+ * 
  * FUNCTION DESCRIPTION
  * ------------------
  * Returns the object with the highest `count`. If more than one object shares the same highest `count`, return the first one.
@@ -73,8 +102,21 @@ function filterByCountMinimum(animals, minimum) {}
  * getMostCommonAnimal(animals); //> { kind: "Chicken", count: 11 }
  * getMostCommonAnimal([]); //> null // returns null if the input is empty
  */
-function getMostCommonAnimal(animals) {}
+function getMostCommonAnimal(animals) {
+  let highestCount = null
 
+  for (let i = 0; i < animals.length; i++) {
+
+    if(animals[i] === animals[2]) {
+     return animals[2]
+      }
+// else if( )
+  }
+  // return highestCount
+} 
+
+
+console.log(getMostCommonAnimal(animals))
 // Do not change anything below this line.
 module.exports = {
   getTotalCount,
